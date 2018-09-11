@@ -1,0 +1,734 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <FrameLayout
+                android:id="@+id/framelayout"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_marginTop="60dp">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/pager_zoom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#ffffff"/>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/dots"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|bottom"
+                    android:layout_margin="5dp"/>
+            </FrameLayout>
+
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mainRV"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@+id/framelayout"/>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/banner"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/mobile_gradient">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Mobiles"
+                        android:layout_marginRight="5dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="13sp"
+                        android:gravity="center"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:background="@mipmap/mobile"
+                        android:baselineAlignBottom="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/tablet_gradient">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Tablets"
+                        android:layout_marginRight="5dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:gravity="center"
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:background="@mipmap/tablet"
+                        android:baselineAlignBottom="true" />
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:layout_marginRight="5dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/gadget_gradient">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Gagets"
+                        android:layout_marginRight="5dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:gravity="center"
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:background="@mipmap/gadget"
+                        android:baselineAlignBottom="true" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_weight=".5"
+                    android:gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/headset_gradient">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Headshet"
+                        android:layout_marginRight="5dp"
+                        android:paddingLeft="10dp"
+                        android:textSize="13sp"
+                        android:gravity="center"
+                        android:fontFamily="@font/proxima_nova_regular"
+                        android:drawablePadding="10dp"
+                        android:textColor="@color/white"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="12dp"
+                        android:background="@mipmap/mobileheadphones"
+                        android:baselineAlignBottom="true" />
+                </RelativeLayout>
+
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/white"
+                    android:textSize="17dp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:text="Popular phones"
+                    android:paddingLeft="10dp"
+                    android:fontFamily="@font/proxima_nova_semi_bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp">
+                    <RelativeLayout
+                        android:id="@+id/firstmobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/white"
+                        android:layout_marginRight="1dp">
+
+                        <ImageView
+                            android:id="@+id/image"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone_1"/>
+
+                        <TextView
+                            android:id="@+id/name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Samsung s5"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_below="@+id/image"
+                            android:layout_marginTop="5dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@+id/name">
+                            <TextView
+                                android:id="@+id/actualprice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 27,999"
+                                android:textColor="#FE8900"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                />
+                            <TextView
+                                android:id="@+id/selligprice"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 27,999"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:layout_toRightOf="@+id/actualprice"
+                                android:layout_marginLeft="10dp"/>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/secondProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginLeft="1dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/image_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone_1"/>
+
+                        <TextView
+                            android:id="@+id/name_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Samsung s5"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_below="@+id/image_2"
+                            android:layout_marginTop="5dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@+id/name_2">
+                            <TextView
+                                android:id="@+id/actualprice_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 27,999"
+                                android:textColor="@color/colorAccent"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                />
+                            <TextView
+                                android:id="@+id/selligprice_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 30,000"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:layout_toRightOf="@+id/actualprice_2"
+                                android:layout_marginLeft="10dp"/>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/white"
+                        android:layout_marginRight="1dp">
+
+                        <ImageView
+                            android:id="@+id/image_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone_1"/>
+
+                        <TextView
+                            android:id="@+id/name_3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Samsung s5"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_below="@+id/image_3"
+                            android:layout_marginTop="5dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@+id/name_3">
+                            <TextView
+                                android:id="@+id/actualprice_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 27,999"
+                                android:textColor="#FE8900"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                />
+                            <TextView
+                                android:id="@+id/selligprice_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 27,999"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:layout_toRightOf="@+id/actualprice_3"
+                                android:layout_marginLeft="10dp"/>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginLeft="1dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/image_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone_1"/>
+
+                        <TextView
+                            android:id="@+id/name_4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Samsung s5"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_below="@+id/image_4"
+                            android:layout_marginTop="5dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@+id/name_4">
+                            <TextView
+                                android:id="@+id/actualprice_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 27,999"
+                                android:textColor="#FE8900"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                />
+                            <TextView
+                                android:id="@+id/selligprice_4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 30,000"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:layout_toRightOf="@+id/actualprice_4"
+                                android:layout_marginLeft="10dp"/>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="2dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:textColor="@color/colorAccent"
+                        android:text="More"
+                        android:gravity="center"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/proxima_nova_regular"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/banner"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"/>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:background="@color/white"
+                    android:textSize="17dp"
+                    android:textColor="@color/colorPrimary"
+                    android:gravity="center_vertical"
+                    android:text="New Arrivals"
+                    android:paddingLeft="10dp"
+                    android:fontFamily="@font/proxima_nova_semi_bold"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/white"
+                        android:layout_marginRight="1dp">
+
+                        <ImageView
+                            android:id="@+id/image4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone_1"/>
+
+                        <TextView
+                            android:id="@+id/name4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Remi Note 3"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_below="@+id/image4"
+                            android:layout_marginTop="5dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@+id/name4">
+                            <TextView
+                                android:id="@+id/actualprice4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 17,999"
+                                android:textColor="#FE8900"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                />
+                            <TextView
+                                android:id="@+id/selligprice4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 20,000"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:layout_toRightOf="@+id/actualprice4"
+                                android:layout_marginLeft="10dp"/>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginLeft="1dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/image_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone_1"/>
+
+                        <TextView
+                            android:id="@+id/name_5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Remi Note 3"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_below="@+id/image_5"
+                            android:layout_marginTop="5dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@+id/name_5">
+                            <TextView
+                                android:id="@+id/actualprice_5"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 17,999"
+                                android:textColor="@color/colorAccent"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                />
+                            <TextView
+                                android:id="@+id/selligprice_"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 20,000"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:layout_toRightOf="@+id/actualprice_5"
+                                android:layout_marginLeft="10dp"/>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="2dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:background="@color/white"
+                        android:layout_marginRight="1dp">
+
+                        <ImageView
+                            android:id="@+id/image_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone_1"/>
+
+                        <TextView
+                            android:id="@+id/name_6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Redmi Note 3"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_below="@+id/image_6"
+                            android:layout_marginTop="5dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@+id/name_6">
+                            <TextView
+                                android:id="@+id/actualprice_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 17,999"
+                                android:textColor="#FE8900"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                />
+                            <TextView
+                                android:id="@+id/selligprice_6"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 20,000"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:layout_toRightOf="@+id/actualprice_6"
+                                android:layout_marginLeft="10dp"/>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".5"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:layout_marginLeft="1dp"
+                        android:background="@color/white">
+
+                        <ImageView
+                            android:id="@+id/image_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone_1"/>
+
+                        <TextView
+                            android:id="@+id/name_7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Redmi Note 3"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/proxima_nova_regular"
+                            android:layout_below="@+id/image_7"
+                            android:layout_marginTop="5dp"/>
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:layout_below="@+id/name_7">
+                            <TextView
+                                android:id="@+id/actualprice_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 17,999"
+                                android:textColor="#FE8900"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                />
+                            <TextView
+                                android:id="@+id/selligprice_7"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs 20,000"
+                                android:gravity="center"
+                                android:textColor="@color/colorPrimary"
+                                android:fontFamily="@font/proxima_nova_regular"
+                                android:layout_toRightOf="@+id/actualprice_7"
+                                android:layout_marginLeft="10dp"/>
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="2dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:textColor="@color/colorAccent"
+                        android:text="More"
+                        android:gravity="center"
+                        android:drawablePadding="5dp"
+                        android:drawableRight="@drawable/right_arrow"
+                        android:textAllCaps="true"
+                        android:fontFamily="@font/proxima_nova_regular"/>
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/banner"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"/>
+
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

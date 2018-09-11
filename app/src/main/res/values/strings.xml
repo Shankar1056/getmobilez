@@ -8,4 +8,6 @@
     <string name="action_settings">Settings</string>
     <string name="prouct_details">Product Details</string>
     <string name="hintpin_code">Pincode</string>
+    <string name="app_sort">Sort</string>
+    <string name="app_filter">Filter</string>
 </resources>

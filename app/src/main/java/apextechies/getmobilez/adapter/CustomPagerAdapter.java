@@ -18,6 +18,7 @@ import java.util.TimerTask;
 
 import apextechies.getmobilez.R;
 import apextechies.getmobilez.activity.MainActivity;
+import apextechies.getmobilez.fragment.HomeFragment;
 import apextechies.getmobilez.model.BannerImageModel;
 
 public class CustomPagerAdapter extends PagerAdapter {
@@ -27,7 +28,7 @@ public class CustomPagerAdapter extends PagerAdapter {
     private ArrayList<BannerImageModel> models;
     private Timer timer;
     private int page = 1;
-    private MainActivity activity;
+    private HomeFragment activity;
     private boolean isDynamic = false;
     private ViewPager viewPager;
 
@@ -36,7 +37,7 @@ public class CustomPagerAdapter extends PagerAdapter {
         return models.size();
     }
 
-    public void setData(ArrayList<BannerImageModel> res, Context context, MainActivity activity) {
+    public void setData(ArrayList<BannerImageModel> res, Context context, HomeFragment activity) {
         this.models = res;
         this.mContext = context;
         this.activity = activity;
@@ -109,14 +110,12 @@ public class CustomPagerAdapter extends PagerAdapter {
 
         @Override
         public void run() {
-
-            // As the TimerTask run on a seprate thread from UI thread we have
-            // to call runOnUiThread to do work on UI thread.
-            activity.runOnUiThread(new Runnable() {
+            viewPager.setCurrentItem(0);
+           /* activity.runOnUiThread(new Runnable() {
                 public void run() {
                     viewPager.setCurrentItem(0);
                 }
-            });
+            });*/
 
         }
     }
